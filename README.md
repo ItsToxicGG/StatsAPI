@@ -23,17 +23,33 @@ class Main extends PluginBase {
   }
 // letz begin with how to add kills, wins, loses, deathes
   public function HowToAdd(Player $player){
-     $this->freeapi->getStats()->addKills($player, 1);
-     $this->freeapi->getStats()->addWins($player, 1);
-     $this->freeapi->getStats()->addDeaths($player, 1);
-     $this->freeapi->getStats()->addLoses($player, 1);     
+     $this->freeapi->getData()->addKills($player, 1);
+     $this->freeapi->getData()->addWins($player, 1);
+     $this->freeapi->getData()->addDeaths($player, 1);
+     $this->freeapi->getData()->addLoses($player, 1);     
   }
 // u can do the same with getting kills, wins, loses and deathes but just add get not add
   public function HowToGet(Player $player){
-     $this->freeapi->getStats()->getKills($player, 1);
-     $this->freeapi->getStats()->getWins($player, 1);
-     $this->freeapi->getStats()->getDeaths($player, 1);
-     $this->freeapi->getStats()->getLoses($player, 1);  
+     $this->freeapi->getData()->getKills($player, 1);
+     $this->freeapi->getData()->getWins($player, 1);
+     $this->freeapi->getData()->getDeaths($player, 1);
+     $this->freeapi->getData()->getLoses($player, 1);  
   }
   
 ```
+# Example
+```php
+/** @var Main */
+public $plugin;
+
+public function __construct(Main $plugin){
+    $this->plugin = $plugin;
+}
+
+// Example =
+public function teamwin(Player $player){
+    $player->sendTitle("Ur team Won");
+    $this->phase = 3;
+    $this->plugin->freeapi->getData()->addWins($player, 1);
+}
+``
