@@ -23,17 +23,19 @@ class StatsMenu {
 		    }
 		});
 	  $PName = $p->getName();
-		$form->setTitle("$PName Stats");
+          $form->setTitle("Stats: $PName");
 	  $kills = $this->plugin->getData()->getKills($p);
-	  $deaths = $this->plugin->getData()->getDeaths($p);
-	  $wins = $this->plugin->getData()->getWins($p);
-    $loses = $this->plugin->getData()->getLoses($p);
-		$stats = 
-		  "§a$PName §fStats\n\n".
-			"§f Kills: §a$kills\n".
-			"§f Deaths: §a$deaths\n".
-			"§f Wins: §a$wins\n".
-      "§f Loses: §a$loses\n\n".
+	  $online = $this->getOnlinePlayer($p);
+	  $stats = 
+		  "§aStatus: $online\n\n".
+		  "§aCurrently on: §fLobby\n". // Todo
+		  "§aKills: §f$kills\n".
+                  "§aDeaths: §f$deaths\n".
+                  "§aK/DR: §f$kdr\n".
+                  "§aCredits: §f$credits\n".
+                  "§aLevel: §f$level\n".
+	          "§aXP: §f$xp\n\n".	  
+		  
 			"\n\n"
 		;
 		$form->setContent($stats);
