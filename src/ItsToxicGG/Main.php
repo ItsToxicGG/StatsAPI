@@ -3,7 +3,7 @@ namespace ItsToxicGG;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
-use ItsToxicGG\provider\{Provider, DefualtProvider, Database\MysqlProvider};
+use ItsToxicGG\provider\{Provider, DefualtProvider, database\MysqlProvider};
 
 class Main extends PluginBase {
   
