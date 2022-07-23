@@ -38,7 +38,7 @@ class Main extends PluginBase {
 		return $this->provider;
 	}
 	
-	private function setProvider(): void{
+	private function setProvider(): void{ // this is just a test mysql comming soon - Toxic
 		$providerName = $this->getConfig()->get("data-provider");
 		$provider = null;
 		switch(strtolower($providerName)){
@@ -46,10 +46,10 @@ class Main extends PluginBase {
 				$provider = new YamlProvider();
 				$this->getLogger()->notice("YamlProvider successfully enabled.");
 				break;
-      case "mysql":
-        $provider = new MysqlProvider();
-			  $this->getLogger()->notice("MysqlProvider successfully enabled.");        
-        break;
+//                        case "mysql": soon
+//                           $provider = new MysqlProvider();
+// 			  $this->getLogger()->notice("MysqlProvider successfully enabled.");        
+//                            break;
 			default:
 				$this->getLogger()->error("Please set a valid data-provider in config.yml. Plugin Disabled");
 				$this->getServer()->getPluginManager()->disablePlugin($this);
