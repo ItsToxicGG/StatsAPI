@@ -5,7 +5,7 @@ namespace ItsToxicGG;
 use pocketmine\player\Player;
 use ItsToxicGG\Main;
 
-class Data {
+class DataProvider {
   
    /** @var Main */
    public $plugin;
