@@ -1,0 +1,6 @@
+# Provider (yaml, defualt, mysql) == defualt is yaml
+provider: defualt
+# MySql-Setup, if mysql is set at provider
+#??
+# StatsForm
+#??
