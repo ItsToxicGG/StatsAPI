@@ -24,18 +24,17 @@ class StatsMenu {
 		});
 	  $PName = $p->getName();
           $form->setTitle("Stats: $PName");
-	  $kills = $this->plugin->getData()->getKills($p);
-	  $online = $this->getOnlinePlayer($p);
+	  if($this->getConfig()->get("provider") === "yaml" or "defualt"){
+	      $kills = $this->plugin->getDefualtProvider()->getKills($p);
+              $deaths = $this->plugin->getDefualtProvider()->getWins($p);
+	      $wins = $this->plugin->getDefualtProvider()->getWins($p)
+	  }
 	  $stats = 
 		  "§aStatus: $online\n\n".
 		  "§aCurrently on: §fLobby\n". // Todo
 		  "§aKills: §f$kills\n".
                   "§aDeaths: §f$deaths\n".
-                  "§aK/DR: §f$kdr\n".
-                  "§aCredits: §f$credits\n".
-                  "§aLevel: §f$level\n".
-	          "§aXP: §f$xp\n\n".	  
-		  
+		  "§aWins: §f$wins\n"
 			"\n\n"
 		;
 		$form->setContent($stats);
