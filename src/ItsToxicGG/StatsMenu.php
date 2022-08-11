@@ -27,7 +27,7 @@ class StatsMenu {
 	  if($this->getConfig()->get("provider") === "yaml" or "defualt"){
 	      $kills = $this->plugin->getDefualtProvider()->getKills($p);
               $deaths = $this->plugin->getDefualtProvider()->getWins($p);
-	      $wins = $this->plugin->getDefualtProvider()->getWins($p)
+	      $wins = $this->plugin->getDefualtProvider()->getWins($p);
 	  }
 	  $stats = 
 		  "§aStatus: $online\n\n".
