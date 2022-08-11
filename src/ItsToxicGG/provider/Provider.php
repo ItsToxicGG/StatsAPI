@@ -7,16 +7,16 @@ use ItsToxicGG\provider\database\MysqlProvider;
 class Provider {
   
   /** @var DefualtProvider */
-  public static $defualt;
+  public $defualt;
     
   /** @var MysqlProvider */
-  public static $mysqlpv;
+  public $mysqlpv;
   
-  public static function getMysql(): MysqlProvider{
-      return self::$mysqlpv;
+  public function getMysql(): MysqlProvider{
+      return new MysqlPrvovider();
   }
   
-  public static function getYaml(): DefualtProvider{
-      return self::$defualt;
+  public function getYaml(): DefualtProvider{
+      return new DefualtProvider();
   }
 }
